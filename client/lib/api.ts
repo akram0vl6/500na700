@@ -1,7 +1,7 @@
 import { News } from '@/types/news'
 
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://five00na700.onrender.com'
 
 export async function fetchNews(): Promise<News[]> {
   try {
@@ -15,7 +15,6 @@ export async function fetchNews(): Promise<News[]> {
 
     const result = await response.json()
 
-    console.log(result);
     
     const newsArray = result.newsWithFullImagePaths || []
     return newsArray.map((item: any) => ({
